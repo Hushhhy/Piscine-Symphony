@@ -1,5 +1,5 @@
 <?php 
-
+    require_once ("MyException.php");
 	class Elem {
 		const valid = [
 		"html",
@@ -15,6 +15,13 @@
 		"p",
 		"span",
 		"div",
+        "table",
+        "tr",
+        "th",
+        "td",
+        "ul",
+        "ol",
+        "li"
 		];
 
 		const auto = [
@@ -34,14 +41,15 @@
 
 		public $elem;
 		public $cont;
+        public $att;
 
-		public function __construct($element, $content = null) {
+		public function __construct($element, $content = null, $attributes = []) {
 			if (!in_array($element, array_merge($this->getValid(), $this->getAuto()))) {
-				echo "Invalid Element: " . $element; 
-				exit;
+				throw new MyException("Invalid Element: " . $element);
 			}
 			$this->elem = $element;
 			$this->cont = $content;
+            $this->att = $attributes;
 		}
 
 		public function pushElement($element) {
@@ -51,12 +59,16 @@
 		}
 
 		public function getHTML() {
+            $attrs = "";
+            foreach ($this->att as $key => $value)
+                $attrs .= $key . '="' . $value . '" '; 
 			if (in_array($this->elem, $this->getAuto()))
-				return "<" . $this->elem . ">\n";
-			$html = "<" . $this->elem . ">\n";
+				return "<" . $this->elem . ($attrs ? " " . $attrs : "") . ">\n";
+            $html = "<" . $this->elem . ($attrs ? " " . $attrs : "") . ">\n";
 			if (is_array($this->cont)) {
-				foreach ($this->cont as $item)
-					$html .= $item->getHTML();
+				foreach ($this->cont as $item) {
+                    $html .= $item->getHTML();
+                }
 			}
 			if (is_string($this->cont))
 				$html .= $this->cont . "\n";

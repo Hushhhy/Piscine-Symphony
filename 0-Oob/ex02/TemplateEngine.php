@@ -5,14 +5,14 @@
 
     class TemplateEngine {
 
-        public function createFile(HotBeverage $text) {
-            $reflection = new ReflectionClass($text);
+        public function createFile(HotBeverage $beverage) {
+            $reflection = new ReflectionClass($beverage);
             $constants = $reflection->getConstants();
             $properties = $reflection->getProperties();
             foreach ($properties as $item) {
-                $description = $item->getName();
-                $getter = "get" . ucfirst($description);
-                $data[$description] = $text->$getter();
+                $propname = $item->getName();
+                $getter = "get" . ucfirst($propname);
+                $data[$propname] = $beverage->$getter();
             }
             foreach ($constants as $key => $value) {
                 $data[$key] = $value;
@@ -21,7 +21,7 @@
             foreach ($data as $key => $value) {
                 $html = str_replace("{" . $key . "}", $value, $html);
             }
-            file_put_contents(get_class($text) . ".html", $html);
+            file_put_contents(get_class($beverage) . ".html", $html);
         }
     }
 
