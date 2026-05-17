@@ -1,0 +1,8 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {{ form(form) }}
+    {% if last_line %}
+        <p>Last line: {{ last_line }}</p>
+    {% endif %}
+{% endblock %}
