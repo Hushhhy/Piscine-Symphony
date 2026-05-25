@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Index{% endblock %}</title>
+    </head>
+    <body>
+        {% block body %}
+            <a href="{{ path('app_ex00_create') }}">Create Database</a>
+            {% for message in app.flashes('success') %}
+                <div>{{ message }}</div>
+            {% endfor %}
+            {% for message in app.flashes('failure') %}
+                <div>{{ message }}</div>
+            {% endfor %}
+        {% endblock %}
+    </body>
+</html>
