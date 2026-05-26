@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+    <style>
+        .w-80 { --progresstool-width: 80%; }
+        .w-75 { --progresstool-width: 75%; }
+        .w-65 { --progresstool-width: 65%; }
+        .w-60 { --progresstool-width: 60%; }
+        .w-50 { --progresstool-width: 50%; }
+        .w-35 { --progresstool-width: 35%; }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>
+            <h2>Frontend</h2>
+            <p class="w-80" data-value="80">HTML5</p>
+            <progress class="html5" max="100" value="80"></progress>
+            <p class="w-60" data-value="60">CSS3</p>
+            <progress class="html5" max="100" value="60"></progress>
+            <p class="w-50" data-value="50">jQuery</p>
+            <progress class="html5" max="100" value="50"></progress>
+        </li>
+        <li>
+            <h2>Backend</h2>
+            <p class="w-75" data-value="75">Python</p>
+            <progress class="python" max="100" value="75"></progress>
+            <p class="w-65" data-value="65">PHP</p>
+            <progress class="python" max="100" value="65"></progress>
+            <p class="w-35" data-value="35">Node.js</p>
+            <progress class="python" max="100" value="35"></progress>
+        </li>
+    </ul>
+</body>
+</html>

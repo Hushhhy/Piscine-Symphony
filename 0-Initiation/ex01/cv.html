@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: #eef3fa;
+            color: #18212f;
+            padding: 28px 14px 36px;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: clamp(1.9rem, 4vw, 2.6rem);
+            letter-spacing: 0.4px;
+            color: #1f4a8a;
+        }
+
+        h2 {
+            margin: 22px 0 8px;
+            letter-spacing: 0.2px;
+        }
+
+        table {
+            font-size: 0.95rem;
+            letter-spacing: 0.3px;
+            margin: 16px auto 4px;
+            background: #ffffff;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        thead, tfoot {
+            background-color: #dde8f2;
+        }
+
+        th, td {
+            border: 1px solid #9ca9bb;
+            padding: 10px 14px;
+        }
+
+        tbody tr:nth-child(even) {
+            background: #f7fbff;
+        }
+
+        td:last-of-type,
+        tbody th {
+            text-align: center;
+        }
+
+        tfoot th {
+            text-align: right;
+        }
+
+        tfoot td {
+            border: 2px solid #424242;
+            font-weight: bold;
+            background: #ffffff;
+        }
+
+        ul, ol {
+            width: min(92vw, 340px);
+            margin: 0;
+            color: #4c5b70;
+        }
+
+        li {
+            margin: 4px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Carpentier Alexis</h1>
+    <table style="border-collapse: collapse;">
+        <thead>
+            <tr>
+                <th scope="col">Date</th>
+                <th scope="col">Expérience</th>
+                <th scope="col">Temps</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">2022</th>
+                <td>Game master</td>
+                <td>11 mois</td>
+            </tr>
+            <tr>
+                <th scope="row">2023</th>
+                <td>Serveur</td>
+                <td>3 mois</td>
+            </tr>
+            <tr>
+                <th scope="row">2024</th>
+                <td>Caissier</td>
+                <td>1 mois</td>
+            </tr>
+            <tr>
+                <th scope="row">2025</th>
+                <td>Barista</td>
+                <td>15 mois</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th scope="row" colspan="2">Total</th>
+                <td>31 mois</td>
+            </tr>
+        </tfoot>
+    </table>
+    <h2>Skills</h2>
+    <ul>
+        <li>HTML5/CSS3</li>
+        <li>TailwindCSS</li>
+        <li>React/Node/Next</li>
+    </ul>
+    <h2>Soft Skills</h2>
+    <ol>
+        <li>Communication</li>
+        <li>Teamwork</li>
+        <li>Problem-solving</li>
+    </ol>
+</body>
+</html>

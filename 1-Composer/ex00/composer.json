@@ -1,0 +1,15 @@
+{
+    "name": "carpe/ex00",
+    "autoload": {
+        "psr-4": {
+            "Carpe\\Ex00\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "carpe",
+            "email": "carpentier.alexis95610@gmail.com"
+        }
+    ],
+    "require": {}
+}
