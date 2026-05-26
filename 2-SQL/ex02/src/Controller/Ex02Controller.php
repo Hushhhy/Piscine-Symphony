@@ -52,8 +52,6 @@ final class Ex02Controller extends AbstractController
                 $this->addFlash('failure', 'Failed to create table!');
                 return $this->redirectToRoute('app_ex02');
             }
-            
-            
         }
         $users = $connection->fetchAllAssociative("SELECT * FROM ex02_users");
         return $this->render('ex02/index.html.twig', [
