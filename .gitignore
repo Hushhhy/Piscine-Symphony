@@ -3,4 +3,6 @@ node_modules/
 var/
 .env.local
 .env.local.php
-notes.txt
+notes.txt.env
+.env.dev
+.env.test
