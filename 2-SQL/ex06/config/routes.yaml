@@ -1,0 +1,8 @@
+controllers:
+    resource:
+        path: ../src/Controller/
+        namespace: App\Controller
+    type: attribute
+ex06:
+    path: /ex06/
+    controller: App\Controller\Ex05Controller::index
