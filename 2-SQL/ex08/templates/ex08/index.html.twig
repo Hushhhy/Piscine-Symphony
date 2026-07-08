@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Index{% endblock %}</title>
+    </head>
+    <body>
+        {% block body %}
+            <a href="{{ path('app_ex08_create') }}">Create Database</a>
+            <a href="{{ path('app_ex08_addColumn') }}">Add marital status column</a>
+            <a href="{{ path('app_ex08_otherTables') }}">Create bank accounts and addresses</a>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Column Name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for column in persons_columns %}
+                    <tr>
+                        <td>{{ column.column_name }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Column Name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for column in bank_columns %}
+                    <tr>
+                        <td>{{ column.column_name }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Column Name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for column in addresses_columns %}
+                    <tr>
+                        <td>{{ column.column_name }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+            {% for message in app.flashes('success') %}
+                <div>{{ message }}</div>
+            {% endfor %}
+            {% for message in app.flashes('failure') %}
+                <div>{{ message }}</div>
+            {% endfor %}
+        {% endblock %}
+    </body>
+</html>
