@@ -3,6 +3,7 @@ controllers:
         path: ../src/Controller/
         namespace: App\Controller
     type: attribute
-ex06:
-    path: /ex06/
-    controller: App\Controller\Ex06Controller::index
+
+ex07:
+    path: /ex07/
+    controller: App\Controller\Ex07Controller::index
